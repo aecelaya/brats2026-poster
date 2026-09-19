@@ -106,16 +106,16 @@
   }
 
   .byline {
-    font-size: 24pt;
+    font-size: 26pt;
     color: var(--ink);
     margin: 0 0 0.08in;
   }
   .byline sup { font-family: var(--mono); font-size: 0.55em; color: var(--gold); margin-left: 1pt; }
 
   .affil {
-    font-size: 17pt;
+    font-size: 18pt;
     color: var(--muted);
-    margin: 0 0 0.36in;
+    margin: 0 0 0.34in;
   }
   .affil sup { font-family: var(--mono); font-size: 0.7em; color: var(--gold); margin-right: 2pt; }
   .affil .sep { display: inline-block; width: 0.5in; }
@@ -137,16 +137,16 @@
     flex: 1 0 auto;
   }
 
-  .col { display: flex; flex-direction: column; gap: 0.4in; }
+  .col { display: flex; flex-direction: column; gap: 0.46in; justify-content: space-between; }
 
   .block h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 32pt;
+    font-size: 38pt;
     color: var(--navy);
-    margin: 0 0 0.14in;
-    padding-top: 0.12in;
-    border-top: 2.5pt solid var(--navy);
+    margin: 0 0 0.16in;
+    padding-top: 0.14in;
+    border-top: 3pt solid var(--navy);
   }
 
   .block p.todo {
@@ -172,43 +172,45 @@
   .block h3 {
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 18pt;
+    font-size: 21pt;
     color: var(--ink);
-    margin: 0.22in 0 0.08in;
+    margin: 0.26in 0 0.1in;
   }
 
   .block > .block-body p,
   .block > .block-body li {
-    font-size: 16.5pt;
-    line-height: 1.44;
+    font-size: 19.5pt;
+    line-height: 1.42;
     color: #2B3040;
   }
 
-  .block > .block-body p { margin: 0 0 0.14in; }
+  .block > .block-body p { margin: 0 0 0.16in; }
 
   .block > .block-body ul {
-    margin: 0 0 0.14in;
-    padding-left: 0.26in;
+    margin: 0 0 0.16in;
+    padding-left: 0.28in;
   }
-  .block > .block-body li { margin-bottom: 0.08in; }
+  .block > .block-body li { margin-bottom: 0.1in; }
   .block > .block-body li::marker { color: var(--gold); }
 
   .block .lede {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 16.5pt;
+    font-weight: 500;
+    font-size: 21pt;
+    line-height: 1.38;
     color: var(--navy-soft);
-    margin: 0 0 0.14in;
+    margin: 0 0 0.18in;
     max-width: 60ch;
   }
 
   .q-list { list-style: none; padding: 0; margin: 0 0 0.1in; }
   .q-list li {
     display: flex;
-    gap: 0.14in;
-    font-size: 15pt;
+    gap: 0.16in;
+    font-size: 18pt;
     line-height: 1.36;
-    margin-bottom: 0.09in;
+    margin-bottom: 0.1in;
   }
   .q-list .q-num {
     flex: none;
@@ -223,7 +225,7 @@
   table.data-table, table.rank-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14pt;
+    font-size: 16.5pt;
   }
 
   table.data-table caption, table.rank-table caption {
@@ -231,9 +233,9 @@
     text-align: left;
     font-family: var(--sans);
     font-weight: 600;
-    font-size: 13.5pt;
+    font-size: 15.5pt;
     color: var(--navy);
-    padding-bottom: 0.08in;
+    padding-bottom: 0.1in;
   }
 
   table.data-table th, table.data-table td,
@@ -252,7 +254,7 @@
   table.data-table thead th,
   table.rank-table thead tr:last-child th {
     font-family: var(--mono);
-    font-size: 11.5pt;
+    font-size: 13.5pt;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--muted);
@@ -265,7 +267,7 @@
     background: var(--navy);
     color: #fff;
     font-weight: 600;
-    font-size: 13pt;
+    font-size: 15pt;
     border-bottom: none;
   }
 
@@ -292,131 +294,90 @@
     background: #fff;
   }
   .figure figcaption {
-    font-size: 12pt;
+    font-size: 14.5pt;
     line-height: 1.35;
     color: var(--muted);
-    margin-top: 0.07in;
+    margin-top: 0.08in;
   }
   .figure figcaption strong { color: var(--ink); font-family: var(--sans); }
 
   .callout {
     background: var(--gold-tint);
     border-left: 4pt solid var(--gold);
-    padding: 0.16in 0.22in;
-    font-size: 15.5pt;
-    line-height: 1.42;
+    padding: 0.18in 0.24in;
+    font-size: 18pt;
+    line-height: 1.4;
     color: var(--ink);
-    margin: 0 0 0.2in;
+    margin: 0 0 0.22in;
   }
   .callout strong { font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.02em; }
 
   /* ---------- References band ---------- */
-  .references {
-    margin: 0.3in 0.7in 0;
-    padding: 0.2in 0 0.3in;
+  .poster-footer {
+    margin: 0.3in 0.7in 0.35in;
+    padding-top: 0.22in;
     border-top: 1pt solid var(--line);
-  }
-
-  .references h2 {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: 22pt;
-    color: var(--navy);
-    margin: 0 0 0.14in;
-  }
-
-  .references .todo {
-    font-size: 15pt;
-    color: var(--muted);
-    font-style: italic;
-  }
-  .references .todo::before {
-    content: "TODO — ";
-    font-style: normal;
-    font-weight: 600;
-    font-family: var(--mono);
-    font-size: 0.75em;
-    color: var(--gold);
-  }
-
-  .refs-list {
-    columns: 3;
-    column-gap: 0.5in;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    counter-reset: refcount;
-  }
-  .refs-list li {
-    counter-increment: refcount;
-    font-size: 12.5pt;
-    line-height: 1.38;
-    color: #333846;
-    margin-bottom: 0.11in;
-    break-inside: avoid;
-    padding-left: 0.24in;
-    text-indent: -0.24in;
-  }
-  .refs-list li::before {
-    content: "[" counter(refcount) "] ";
-    font-family: var(--mono);
-    color: var(--gold);
-    font-weight: 600;
+    text-align: center;
   }
 
   .acknowledgments {
-    font-size: 11pt;
+    font-size: 13pt;
+    line-height: 1.4;
     color: var(--muted);
     margin: 0;
   }
+  .acknowledgments strong { color: var(--navy-soft); font-family: var(--mono); font-weight: 600; letter-spacing: 0.02em; }
 
   /* ---------- QR banner ---------- */
   .qr-banner {
     display: flex;
     align-items: center;
-    gap: 0.5in;
-    margin: 0.35in 0.7in 0;
-    padding: 0.32in 0.5in;
+    justify-content: center;
+    gap: 0.65in;
+    margin: 0.4in 0.7in 0;
+    padding: 0.5in;
     background: var(--navy);
-    border-radius: 0.1in;
+    border-top: 6pt solid var(--gold);
   }
 
   .qr-banner-code {
     flex: none;
-    width: 2in;
-    height: 2in;
+    width: 2.9in;
+    height: 2.9in;
     display: block;
     background: #fff;
-    padding: 0.14in;
+    padding: 0.16in;
     border-radius: 0.06in;
   }
 
-  .qr-banner-text { flex: 1; }
+  .qr-banner-text { flex: none; max-width: 20in; }
 
   .qr-banner-kicker {
     display: block;
     font-family: var(--mono);
-    font-size: 14pt;
-    letter-spacing: 0.14em;
+    font-size: 17pt;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--gold-tint);
-    margin-bottom: 0.06in;
+    margin-bottom: 0.1in;
   }
 
   .qr-banner-text h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 34pt;
+    font-size: 52pt;
+    line-height: 1.05;
     color: #fff;
-    margin: 0 0 0.08in;
+    margin: 0 0 0.12in;
   }
 
   .qr-banner-text p {
-    font-size: 17pt;
+    font-size: 22pt;
+    line-height: 1.35;
     color: #E7E9F2;
     margin: 0;
   }
-  .qr-banner-text p strong { color: #fff; font-family: var(--mono); font-size: 0.9em; }
+  .qr-banner-text p strong { color: #fff; font-family: var(--mono); font-size: 0.88em; }
 </style>
 </head>
 <body>
@@ -447,8 +408,7 @@
       <div class="block">
         <h2>Introduction</h2>
         <div class="block-body">
-          <p>Since its 2015 introduction, U-Net has been cited over 100,000 times, and frameworks like nnU-Net remain the reproducible standard on BraTS and the Medical Segmentation Decathlon. Despite continued architectural innovation &mdash; transformers, boundary-aware losses &mdash; reported gains over nnU-Net are not always reproducible.</p>
-          <p>We address this with <strong>MIST</strong>, our modular, end-to-end segmentation framework. Using MIST, we placed <strong>3rd</strong> in both the 2024 BraTS Adult Glioma Post-Treatment challenge and the 2025 BraTS Pre-/Post-Treatment MRI challenge. For BraTS 2026 we enter the three tasks above, each testing a different kind of generalization.</p>
+          <p>Reported segmentation gains over nnU-Net are not always reproducible. We address this with <strong>MIST</strong>, our modular segmentation framework, which placed <strong>3rd</strong> in the 2024 and 2025 BraTS challenges. For BraTS 2026 we enter three tasks &mdash; brain metastases, pediatric tumors, and cross-population generalizability &mdash; each testing a different kind of generalization.</p>
           <h3>This report asks two questions</h3>
           <ul class="q-list">
             <li><span class="q-num">01</span><span>System-level: does a <strong>MISFIT</strong>-pretrained SwinUNETR-V2 pipeline beat our established pocket nnU-Net baseline?</span></li>
@@ -476,31 +436,35 @@
           </div>
 
           <h3>Self-supervised pretraining via MISFIT</h3>
-          <p><strong>MISFIT</strong> is our in-development framework for pretraining 3D medical imaging encoders with masked autoencoding (MAE), independent of MIST. Using <code>misfit_index</code>, we pooled every training-split MRI volume across all three tasks &mdash; including Task 3's 1,137-patient unlabeled cohort &mdash; into <strong>16,315</strong> single-channel volumes (T1N/T1C/T2W/T2F indexed separately). A <code>swinunetr-base</code> encoder (18.6M params) was trained on 96&sup3; crops with 75% of the volume masked in non-overlapping 16&sup3; cubes, reconstructed via a lightweight transposed-convolution decoder under a per-patch variance-normalized MSE loss (AdamW, lr 1&times;10&#8315;&#8308;, 200 epochs, 4&times;A100). The pretrained encoder was then transferred into MIST's SwinUNETR-base segmentation architecture.</p>
+          <p><strong>MISFIT</strong> pretrains 3D medical-imaging encoders with masked autoencoding (MAE), independent of MIST. We pooled every training-split MRI volume across all three tasks into <strong>16,315</strong> single-channel volumes, masked 75% of each crop, and trained a SwinUNETR-base encoder for 200 epochs to reconstruct it. That encoder was then transferred into MIST's SwinUNETR-base segmentation architecture.</p>
 
           <h3>Three network arms</h3>
           <ul>
-            <li><strong>Pocket nnU-Net (baseline)</strong> &mdash; constant-width (32-filter) conv encoder&ndash;decoder, 128&sup3; patch, random init; our returning baseline from prior BraTS challenges.</li>
-            <li><strong>SwinUNETR-V2, MISFIT-pretrained</strong> &mdash; same architecture, 96&sup3; patch, encoder initialized from MISFIT weights.</li>
-            <li><strong>SwinUNETR-V2, from scratch</strong> &mdash; identical to the arm above except for random encoder initialization &mdash; the matched control.</li>
+            <li><strong>Pocket nnU-Net (baseline)</strong> &mdash; our returning conv baseline, 128&sup3; patch, random init.</li>
+            <li><strong>SwinUNETR-V2, MISFIT-pretrained</strong> &mdash; 96&sup3; patch, encoder from MISFIT weights.</li>
+            <li><strong>SwinUNETR-V2, from scratch</strong> &mdash; identical, but randomly initialized &mdash; the matched control.</li>
           </ul>
-          <p>The two SwinUNETR arms share architecture, patch size, and a 1,000-epoch fine-tuning budget, differing only in encoder initialization &mdash; isolating the effect of pretraining. The baseline differs from both in architecture, patch size, learning rate, <em>and</em> budget, so it measures a full pipeline-level contrast instead.</p>
+          <p>The two SwinUNETR arms are matched on everything but initialization, isolating the pretraining effect. The baseline differs in architecture, patch size, <em>and</em> budget too, so it tests the full pipeline instead.</p>
 
           <h3>Training &amp; evaluation</h3>
-          <p>5-fold cross-validation, Dice + cross-entropy loss, AdamW, cosine schedule with 20-epoch warmup, bfloat16, GPU-resident DALI augmentation. The baseline trained up to 5,000 epochs/fold (mean 3,107&ndash;4,252 actual); both SwinUNETR arms trained exactly 1,000 epochs/fold. Inference used sliding-window Gaussian blending, 8-way flip test-time augmentation, and 5-fold averaging. Arms are compared with MIST's <code>mist_rank</code> &mdash; a BraTS-style per-patient average rank &mdash; and a two-sided Wilcoxon signed-rank test (&alpha; = 0.05).</p>
+          <p>5-fold cross-validation; the baseline trained up to 5,000 epochs/fold (mean 3,107&ndash;4,252 actual), both SwinUNETR arms exactly 1,000. Arms are compared via BraTS-style average rank (MIST's <code>mist_rank</code>) and a two-sided Wilcoxon signed-rank test (&alpha; = 0.05).</p>
+
+          <figure class="figure">
+            <img src="images/val_loss_convergence_v3.png" alt="Validation loss convergence curves for all three tasks and arms">
+            <figcaption><strong>Figure 1.</strong> Validation loss across training. The MISFIT-pretrained arm reaches within 3.5&ndash;7.3% of the baseline's converged floor inside its 1,000-epoch budget &mdash; far fewer epochs than the baseline needs. The from-scratch SwinUNETR fails to converge at all on Task 2.</figcaption>
+          </figure>
         </div>
       </div>
 
       <div class="block">
         <h2>Discussion &amp; Conclusion</h2>
         <div class="block-body">
-          <p class="lede">Held-out validation does not support the pooled MISFIT pipeline beating our established baseline &mdash; but the matched control shows MAE pretraining genuinely helps once architecture, patch size, and budget are held fixed.</p>
+          <p class="lede">MAE pretraining genuinely helps once architecture, patch size, and budget are held fixed &mdash; but held-out validation does not support the pooled MISFIT pipeline beating our established baseline.</p>
           <ul>
-            <li><strong>Task 1's reversal is explainable.</strong> Task 1 is scored lesion-wise, where a small boundary deficit invisible in per-voxel CV Dice is heavily amplified; a 1,000-epoch fine-tuning budget likely wasn't enough to refine small-lesion boundaries.</li>
-            <li><strong>Where pretraining helps most.</strong> Task 2 enhancing tumor Dice improves from 0.518 &rarr; 0.670 under cross-validation; on Task 1 held-out, the resection cavity leads on every metric (Dice 0.886 &rarr; 0.923) while ET/TC/WT show no advantage &mdash; a concentrated, not uniform, gain.</li>
-            <li><strong>Transformers are data-hungry without pretraining.</strong> Task 2 (294 cases) is the only task where the from-scratch SwinUNETR fails to converge &mdash; and the task where MISFIT initialization helps most.</li>
-            <li><strong>Final submission: pocket nnU-Net for all three tasks</strong> &mdash; required by data-usage rules barring cross-task pooling, and independently supported by the held-out results themselves.</li>
-            <li><strong>This is a preliminary MAE schedule</strong> &mdash; 200 epochs against the 800&ndash;1,600 convention. Longer pretraining and larger fine-tuning budgets are needed to test whether pretrained transformers can surpass fully converged CNNs on these tasks.</li>
+            <li><strong>Task 1's reversal is explainable.</strong> Its lesion-wise scoring amplifies a small boundary deficit that per-voxel CV Dice hides; 1,000 epochs likely wasn't enough to refine it.</li>
+            <li><strong>Pretraining helps most where labels are scarce.</strong> Task 2 (294 cases) sees the largest gain (ET Dice 0.518 &rarr; 0.670) and is the only task where the from-scratch model fails to converge.</li>
+            <li><strong>Final submission: pocket nnU-Net for all three tasks</strong> &mdash; required by data-usage rules, and independently supported by the held-out results.</li>
+            <li><strong>This is a preliminary MAE schedule</strong> &mdash; 200 epochs against the 800&ndash;1,600 convention. Longer pretraining may close the gap.</li>
           </ul>
         </div>
       </div>
@@ -531,18 +495,13 @@
             </table>
           </div>
 
-          <p>Against the <strong>matched control</strong> (upper vs. lower block, same architecture/patch/budget), MISFIT pretraining wins on all three tasks under both protocols &mdash; the isolated pretraining effect is real. Against the <strong>established baseline</strong>, the picture reverses: cross-validation favors the pretrained pipeline on Tasks 2&ndash;3, but that advantage vanishes on held-out validation, and the baseline pulls significantly ahead on Task 1 held-out (p = 1.5&times;10&#8315;&#8308;).</p>
+          <p>Against the <strong>matched control</strong>, MISFIT pretraining wins on all three tasks under both protocols &mdash; the isolated effect is real. Against the <strong>established baseline</strong>, the picture reverses: CV favors the pretrained pipeline on Tasks 2&ndash;3, but that vanishes on held-out validation, where the baseline pulls significantly ahead on Task 1 (p = 1.5&times;10&#8315;&#8308;).</p>
 
-          <div class="callout"><strong>Why the CV signal doesn't replicate</strong> &mdash; the MAE encoder was pretrained on the pooled training split, giving it label-free exposure to images that later formed each cross-validation fold. That asymmetry inflates CV scores for Tasks 2&ndash;3; held-out scoring, which excludes the pretraining pool entirely, is unaffected and is why we treat it as the decisive protocol.</div>
-
-          <figure class="figure">
-            <img src="images/val_loss_convergence_v3.png" alt="Validation loss convergence curves for all three tasks and arms">
-            <figcaption><strong>Figure 1.</strong> Validation loss (Dice, excl. background) across training. The MISFIT-pretrained arm reaches within 3.5&ndash;7.3% of the baseline's fully converged floor inside its 1,000-epoch budget &mdash; in far fewer epochs than the baseline needs (means: 3,107 / 3,908 / 4,252). The from-scratch SwinUNETR fails to converge at all on Task 2.</figcaption>
-          </figure>
+          <div class="callout"><strong>Why CV doesn't replicate</strong> &mdash; the MAE encoder saw pooled training-split images label-free, inflating CV scores for Tasks 2&ndash;3. Held-out scoring excludes the pretraining pool entirely, which is why we treat it as decisive.</div>
 
           <figure class="figure">
             <img src="images/qualitative_predictions_v3.png" alt="Qualitative segmentation comparison across the three tasks">
-            <figcaption><strong>Figure 2.</strong> One representative training-cohort case per task: T1c, ground truth, and all three arms. All three agree closely on Tasks 1 and 3; on Task 2 the baseline recovers almost none of the cystic component (pink).</figcaption>
+            <figcaption><strong>Figure 2.</strong> One representative case per task: T1c, ground truth, and all three arms. All agree closely on Tasks 1 and 3; on Task 2 the baseline recovers almost none of the cystic component (pink).</figcaption>
           </figure>
 
         </div>
@@ -560,26 +519,7 @@
     </div>
   </section>
 
-  <section class="references">
-    <h2>References</h2>
-    <ol class="refs-list">
-      <li>Ronneberger, O., et al. U-Net: Convolutional Networks for Biomedical Image Segmentation. <em>MICCAI</em>, 2015.</li>
-      <li>Isensee, F., et al. nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. <em>Nature Methods</em>, 2021.</li>
-      <li>Isensee, F., et al. nnU-Net Revisited: A Call for Rigorous Validation in 3D Medical Image Segmentation. <em>arXiv:2404.09556</em>, 2024.</li>
-      <li>Hatamizadeh, A., et al. Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in MRI Images. <em>MICCAI Brainlesion</em>, 2021.</li>
-      <li>He, Y., et al. SwinUNETR-V2: Stronger Swin Transformers with Stagewise Convolutions for 3D Medical Image Segmentation. <em>MICCAI</em>, 2023.</li>
-      <li>He, K., et al. Masked Autoencoders Are Scalable Vision Learners. <em>CVPR</em>, 2022.</li>
-      <li>Tang, Y., et al. Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis. <em>CVPR</em>, 2022.</li>
-      <li>Celaya, A., et al. PocketNet: A Smaller Neural Network For Medical Image Analysis. <em>IEEE TMI</em>, 2023.</li>
-      <li>Celaya, A., et al. MIST: A Simple and Scalable End-to-End 3D Medical Imaging Segmentation Framework. <em>arXiv:2407.21343</em>, 2024.</li>
-      <li>Celaya, A., et al. A Generalized Surface Loss for Reducing the Hausdorff Distance in Medical Imaging Segmentation. <em>arXiv:2302.03868</em>, 2023.</li>
-      <li>Maier-Hein, L., et al. Metrics Reloaded: Recommendations for Image Analysis Validation. <em>Nature Methods</em>, 2024.</li>
-      <li>Moawad, A.W., et al. The Brain Tumor Segmentation (BraTS-METS) Challenge 2023. <em>arXiv:2306.00838</em>, 2023.</li>
-      <li>Kazerooni, A.F., et al. The Brain Tumor Segmentation in Pediatrics (BraTS-PEDs) Challenge. <em>arXiv:2404.15009</em>, 2024.</li>
-      <li>Menze, B.H., et al. The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS). <em>IEEE TMI</em>, 2015.</li>
-      <li>Wu, L., et al. VoCo: A Simple-yet-Effective Volume Contrastive Learning Framework for 3D Medical Image Analysis. <em>CVPR</em>, 2024.</li>
-      <li>Loshchilov, I., Hutter, F. Decoupled Weight Decay Regularization. <em>arXiv:1711.05101</em>, 2017.</li>
-    </ol>
+  <section class="poster-footer">
     <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097).</p>
   </section>
 
