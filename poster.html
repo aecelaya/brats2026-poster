@@ -61,8 +61,8 @@
   }
 
   .masthead img { display: block; }
-  .masthead .logo-rice { height: 0.62in; width: auto; }
-  .masthead .logo-mda  { height: 0.52in; width: auto; }
+  .masthead .logo-rice { height: 0.95in; width: auto; }
+  .masthead .logo-mda  { height: 0.8in; width: auto; }
 
   .masthead-label {
     font-family: var(--mono);
@@ -294,10 +294,10 @@
     background: #fff;
   }
   .figure figcaption {
-    font-size: 14.5pt;
-    line-height: 1.35;
+    font-size: 16pt;
+    line-height: 1.4;
     color: var(--muted);
-    margin-top: 0.08in;
+    margin-top: 0.1in;
   }
   .figure figcaption strong { color: var(--ink); font-family: var(--sans); }
 
@@ -312,21 +312,14 @@
   }
   .callout strong { font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.02em; }
 
-  /* ---------- References band ---------- */
-  .poster-footer {
-    margin: 0.3in 0.7in 0.35in;
-    padding-top: 0.22in;
-    border-top: 1pt solid var(--line);
-    text-align: center;
-  }
-
+  /* ---------- Acknowledgments block ---------- */
   .acknowledgments {
-    font-size: 13pt;
-    line-height: 1.4;
-    color: var(--muted);
+    font-size: 17pt;
+    line-height: 1.45;
+    color: #2B3040;
     margin: 0;
   }
-  .acknowledgments strong { color: var(--navy-soft); font-family: var(--mono); font-weight: 600; letter-spacing: 0.02em; }
+  .acknowledgments strong { color: var(--navy-soft); }
 
   /* ---------- QR banner ---------- */
   .qr-banner {
@@ -386,7 +379,7 @@
 
   <header class="masthead">
     <img class="logo-rice" src="images/University_Lockups_Digital_Rice_Blue.png" alt="Rice University">
-    <div class="masthead-label">MICCAI &middot; BraTS 2026 Challenge Report</div>
+    <div class="masthead-label">MICCAI &middot; BraTS 2026</div>
     <img class="logo-mda" src="images/mda_logo.png" alt="MD Anderson Cancer Center">
   </header>
 
@@ -448,11 +441,6 @@
 
           <h3>Training &amp; evaluation</h3>
           <p>5-fold cross-validation; the baseline trained up to 5,000 epochs/fold (mean 3,107&ndash;4,252 actual), both SwinUNETR arms exactly 1,000. Arms are compared via BraTS-style average rank (MIST's <code>mist_rank</code>) and a two-sided Wilcoxon signed-rank test (&alpha; = 0.05).</p>
-
-          <figure class="figure">
-            <img src="images/val_loss_convergence_v3.png" alt="Validation loss convergence curves for all three tasks and arms">
-            <figcaption><strong>Figure 1.</strong> Validation loss across training. The MISFIT-pretrained arm reaches within 3.5&ndash;7.3% of the baseline's converged floor inside its 1,000-epoch budget &mdash; far fewer epochs than the baseline needs. The from-scratch SwinUNETR fails to converge at all on Task 2.</figcaption>
-          </figure>
         </div>
       </div>
 
@@ -466,6 +454,13 @@
             <li><strong>Final submission: pocket nnU-Net for all three tasks</strong> &mdash; required by data-usage rules, and independently supported by the held-out results.</li>
             <li><strong>This is a preliminary MAE schedule</strong> &mdash; 200 epochs against the 800&ndash;1,600 convention. Longer pretraining may close the gap.</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Acknowledgments</h2>
+        <div class="block-body">
+          <p class="acknowledgments">Supported in part by CPRIT RP250154, NIH R01CA301555, and R01CA195524, and the MD Anderson QIAC Partnership in Research. Data used in this publication were obtained as part of the BraTS 2026 Challenge project through Synapse ID syn74274097.</p>
         </div>
       </div>
 
@@ -500,8 +495,13 @@
           <div class="callout"><strong>Why CV doesn't replicate</strong> &mdash; the MAE encoder saw pooled training-split images label-free, inflating CV scores for Tasks 2&ndash;3. Held-out scoring excludes the pretraining pool entirely, which is why we treat it as decisive.</div>
 
           <figure class="figure">
+            <img src="images/val_loss_convergence_v3.png" alt="Validation loss convergence curves for all three tasks and arms">
+            <figcaption><strong>Figure 1.</strong> Validation loss (Dice, excl. background) across training, one representative fold per task. The MISFIT-pretrained arm reaches within 3.5&ndash;7.3% of the baseline's fully converged floor inside its 1,000-epoch budget, in far fewer epochs than the baseline needs (means: 3,107 / 3,908 / 4,252 epochs for Tasks 1&ndash;3). The from-scratch SwinUNETR converges but plateaus above both other arms on Tasks 1 and 3, and fails to converge at all on Task 2.</figcaption>
+          </figure>
+
+          <figure class="figure">
             <img src="images/qualitative_predictions_v3.png" alt="Qualitative segmentation comparison across the three tasks">
-            <figcaption><strong>Figure 2.</strong> One representative case per task: T1c, ground truth, and all three arms. All agree closely on Tasks 1 and 3; on Task 2 the baseline recovers almost none of the cystic component (pink).</figcaption>
+            <figcaption><strong>Figure 2.</strong> One representative training-cohort case per task, comparing T1c and ground truth against all three arms (baseline, MISFIT-pretrained, from-scratch). All three agree closely on Tasks 1 and 3; Task 2 is the only row where they visibly diverge &mdash; the baseline recovers almost none of the cystic component (pink).</figcaption>
           </figure>
 
         </div>
@@ -517,10 +517,6 @@
       <h2>Explore MIST &amp; MISFIT</h2>
       <p>Scan for code, documentation, and releases at <strong>github.com/mist-medical</strong></p>
     </div>
-  </section>
-
-  <section class="poster-footer">
-    <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097).</p>
   </section>
 
 </div>
