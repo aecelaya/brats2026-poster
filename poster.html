@@ -218,19 +218,40 @@
     color: var(--gold);
   }
 
-  /* ---------- Small data table (Table 1) ---------- */
-  table.data-table {
+  /* ---------- Shared poster-table styling ---------- */
+  .data-table-wrap, .rank-table-wrap { margin: 0 0 0.2in; }
+
+  table.data-table, table.rank-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0 0 0.16in;
     font-size: 14pt;
   }
-  table.data-table th, table.data-table td {
+
+  table.data-table caption, table.rank-table caption {
+    caption-side: top;
     text-align: left;
-    padding: 0.055in 0.1in;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13.5pt;
+    color: var(--navy);
+    padding-bottom: 0.08in;
+  }
+
+  table.data-table th, table.data-table td,
+  table.rank-table th, table.rank-table td {
+    padding: 0.065in 0.1in;
+    text-align: center;
     border-bottom: 1pt solid var(--line);
   }
-  table.data-table thead th {
+
+  table.data-table td:first-child, table.data-table th:first-child,
+  table.rank-table td:first-child, table.rank-table th:first-child {
+    text-align: left;
+  }
+
+  /* column-label header row: mono, muted, uppercase, navy rule beneath */
+  table.data-table thead th,
+  table.rank-table thead tr:last-child th {
     font-family: var(--mono);
     font-size: 11.5pt;
     letter-spacing: 0.04em;
@@ -239,7 +260,22 @@
     font-weight: 600;
     border-bottom: 1.5pt solid var(--navy);
   }
-  table.data-table td.num, table.data-table th.num { font-family: var(--mono); }
+
+  /* navy group-header row (rank table only: spans CV / held-out) */
+  table.rank-table thead tr:first-child th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    font-size: 13pt;
+    border-bottom: none;
+  }
+
+  table.data-table td.num, table.data-table th.num,
+  table.rank-table td.num { font-family: var(--mono); }
+
+  table.data-table td:not(:first-child) { text-align: center; }
+  table.data-table td.region-col, table.data-table th.region-col { text-align: left; }
+
   table.data-table td:first-child {
     border-left: 4pt solid var(--task-dot);
     font-family: var(--mono);
@@ -250,43 +286,6 @@
   table.data-table tr.t2 { --task-dot: var(--task-2); }
   table.data-table tr.t3 { --task-dot: var(--task-3); }
 
-  /* ---------- Results rank table (Table 2) ---------- */
-  .rank-table-wrap { margin: 0 0 0.2in; }
-  table.rank-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14pt;
-  }
-  table.rank-table caption {
-    caption-side: top;
-    text-align: left;
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 13.5pt;
-    color: var(--navy);
-    padding-bottom: 0.08in;
-  }
-  table.rank-table th, table.rank-table td {
-    padding: 0.07in 0.1in;
-    text-align: center;
-    border-bottom: 1pt solid var(--line);
-  }
-  table.rank-table td:first-child, table.rank-table th:first-child { text-align: left; }
-  table.rank-table thead tr:first-child th {
-    background: var(--navy);
-    color: #fff;
-    font-weight: 600;
-    font-size: 13pt;
-    border-bottom: none;
-  }
-  table.rank-table thead tr:nth-child(2) th {
-    font-family: var(--mono);
-    font-size: 11.5pt;
-    color: var(--muted);
-    border-bottom: 1.5pt solid var(--navy);
-    font-weight: 600;
-  }
-  table.rank-table td.num { font-family: var(--mono); }
   table.rank-table td.win { font-weight: 700; color: var(--navy); }
   table.rank-table td.sig { color: var(--gold); font-weight: 600; }
   table.rank-table tbody tr.divider td { border-top: 2pt solid var(--navy); border-bottom: 1pt solid var(--line); }
@@ -427,16 +426,19 @@
         <h2>Methods</h2>
         <div class="block-body">
           <h3>Data</h3>
-          <table class="data-table">
-            <thead>
-              <tr><th>Task</th><th>Cohort</th><th class="num">Train</th><th class="num">Held-out</th><th>Regions</th></tr>
-            </thead>
-            <tbody>
-              <tr class="t1"><td>1</td><td>Brain metastases</td><td class="num">1,196</td><td class="num">179</td><td>NETC, SNFH, ET, RC</td></tr>
-              <tr class="t2"><td>2</td><td>Pediatric tumors</td><td class="num">294</td><td class="num">91</td><td>ET, NET, CC, ED</td></tr>
-              <tr class="t3"><td>3</td><td>BraTS-GoAT</td><td class="num">1,351</td><td class="num">450</td><td>ET, TC, WT</td></tr>
-            </tbody>
-          </table>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption>Table 1 &middot; Dataset sizes and regions evaluated per task</caption>
+              <thead>
+                <tr><th>Task</th><th class="region-col">Cohort</th><th class="num">Train</th><th class="num">Held-out</th><th class="region-col">Regions</th></tr>
+              </thead>
+              <tbody>
+                <tr class="t1"><td>1</td><td class="region-col">Brain metastases</td><td class="num">1,196</td><td class="num">179</td><td class="region-col">NETC, SNFH, ET, RC</td></tr>
+                <tr class="t2"><td>2</td><td class="region-col">Pediatric tumors</td><td class="num">294</td><td class="num">91</td><td class="region-col">ET, NET, CC, ED</td></tr>
+                <tr class="t3"><td>3</td><td class="region-col">BraTS-GoAT</td><td class="num">1,351</td><td class="num">450</td><td class="region-col">ET, TC, WT</td></tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3>Self-supervised pretraining via MISFIT</h3>
           <p><strong>MISFIT</strong> is our in-development framework for pretraining 3D medical imaging encoders with masked autoencoding (MAE), independent of MIST. Using <code>misfit_index</code>, we pooled every training-split MRI volume across all three tasks &mdash; including Task 3's 1,137-patient unlabeled cohort &mdash; into <strong>16,315</strong> single-channel volumes (T1N/T1C/T2W/T2F indexed separately). A <code>swinunetr-base</code> encoder (18.6M params) was trained on 96&sup3; crops with 75% of the volume masked in non-overlapping 16&sup3; cubes, reconstructed via a lightweight transposed-convolution decoder under a per-patch variance-normalized MSE loss (AdamW, lr 1&times;10&#8315;&#8308;, 200 epochs, 4&times;A100). The pretrained encoder was then transferred into MIST's SwinUNETR-base segmentation architecture.</p>
@@ -477,7 +479,7 @@
 
           <div class="rank-table-wrap">
             <table class="rank-table">
-              <caption>Table 1 &middot; BraTS-style average rank (lower is better), two-sided Wilcoxon p-values</caption>
+              <caption>Table 2 &middot; BraTS-style average rank (lower is better), two-sided Wilcoxon p-values</caption>
               <thead>
                 <tr><th></th><th colspan="3">5-fold cross-validation</th><th colspan="3">Held-out validation</th></tr>
                 <tr><th>Task</th><th>Base</th><th>MISFIT</th><th>p</th><th>Base</th><th>MISFIT</th><th>p</th></tr>
