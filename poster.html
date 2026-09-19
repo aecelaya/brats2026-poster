@@ -401,7 +401,8 @@
       <div class="block">
         <h2>Introduction</h2>
         <div class="block-body">
-          <p>Reported segmentation gains over nnU-Net are not always reproducible. We address this with <strong>MIST</strong>, our modular segmentation framework, which placed <strong>3rd</strong> in the 2024 and 2025 BraTS challenges. For BraTS 2026 we enter three tasks &mdash; brain metastases, pediatric tumors, and cross-population generalizability &mdash; each testing a different kind of generalization.</p>
+          <p>Despite continued architectural innovation in medical image segmentation, reported performance gains are not always reproducible, and standardized tooling for consistent comparisons remains scarce. We address this with <strong>MIST</strong>, our modular, end-to-end framework for training, testing, and evaluating segmentation methods in a standardized, reproducible manner &mdash; which placed <strong>3rd</strong> in the 2024 and 2025 BraTS challenges. For BraTS 2026 we enter three tasks &mdash; brain metastases, pediatric tumors, and cross-population generalizability &mdash; each testing a different kind of generalization.</p>
+          <p>This year we also debut <strong>MISFIT</strong>, our in-development framework for self-supervised pretraining of 3D medical-imaging encoders via masked autoencoding (MAE). We use it to pretrain a SwinUNETR-V2 encoder on a pooled, cross-task corpus of over 16,000 unlabeled MRI volumes spanning all three tasks' training data.</p>
           <h3>This report asks two questions</h3>
           <ul class="q-list">
             <li><span class="q-num">01</span><span>System-level: does a <strong>MISFIT</strong>-pretrained SwinUNETR-V2 pipeline beat our established pocket nnU-Net baseline?</span></li>
