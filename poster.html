@@ -204,17 +204,6 @@
   .block > .block-body li { margin-bottom: 0.12in; }
   .block > .block-body li::marker { color: var(--gold); }
 
-  .block .lede {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 500;
-    font-size: 24pt;
-    line-height: 1.4;
-    color: var(--navy-soft);
-    margin: 0 0 0.2in;
-    max-width: 60ch;
-  }
-
   .q-list { list-style: none; padding: 0; margin: 0 0 0.1in; }
   .q-list li {
     display: flex;
@@ -458,7 +447,7 @@
       <div class="block">
         <h2>Discussion &amp; Conclusion</h2>
         <div class="block-body">
-          <p class="lede">MAE pretraining genuinely helps once architecture, patch size, and budget are held fixed &mdash; but held-out validation does not support the pooled MISFIT pipeline beating our established baseline.</p>
+          <div class="callout callout-result"><strong>Main finding</strong> &mdash; MAE pretraining genuinely helps once architecture, patch size, and budget are held fixed, but held-out validation does not support the pooled MISFIT pipeline beating our established baseline.</div>
           <ul>
             <li><strong>Task 1's reversal is explainable.</strong> Its lesion-wise scoring amplifies a small boundary deficit that per-voxel CV Dice hides; 1,000 epochs likely wasn't enough to refine it.</li>
             <li><strong>Pretraining helps most where labels are scarce.</strong> Task 2 (294 cases) sees the largest gain (ET Dice 0.518 &rarr; 0.670) and is the only task where the from-scratch model fails to converge.</li>
@@ -471,7 +460,7 @@
       <div class="block">
         <h2>Acknowledgments</h2>
         <div class="block-body">
-          <p class="acknowledgments">Supported in part by CPRIT RP250154, NIH R01CA301555, and R01CA195524, and the MD Anderson QIAC Partnership in Research. Data used in this publication were obtained as part of the BraTS 2026 Challenge project through Synapse ID syn74274097.</p>
+          <p class="acknowledgments">Supported in part by CPRIT RP250154, NIH R01CA301555, and R01CA195524, and the MD Anderson QIAC Partnership in Research.</p>
         </div>
       </div>
 
