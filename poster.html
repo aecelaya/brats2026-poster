@@ -18,10 +18,6 @@
     --line:       #DBD6C8;
     --muted:      #6B7186;
 
-    --task-1: #3D6EB0;   /* brain metastases   */
-    --task-2: #3E8E68;   /* pediatric tumors   */
-    --task-3: #B0562F;   /* BraTS-GoAT         */
-
     --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
     --sans:  "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
     --mono:  "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
@@ -276,16 +272,6 @@
   table.data-table td:not(:first-child) { text-align: center; }
   table.data-table td.region-col, table.data-table th.region-col { text-align: left; }
 
-  table.data-table td:first-child {
-    border-left: 4pt solid var(--task-dot);
-    font-family: var(--mono);
-    font-weight: 600;
-    padding-left: 0.08in;
-  }
-  table.data-table tr.t1 { --task-dot: var(--task-1); }
-  table.data-table tr.t2 { --task-dot: var(--task-2); }
-  table.data-table tr.t3 { --task-dot: var(--task-3); }
-
   table.rank-table td.win { font-weight: 700; color: var(--navy); }
   table.rank-table td.sig { color: var(--gold); font-weight: 600; }
   table.rank-table tbody tr.divider td { border-top: 2pt solid var(--navy); border-bottom: 1pt solid var(--line); }
@@ -433,9 +419,9 @@
                 <tr><th>Task</th><th class="region-col">Cohort</th><th class="num">Train</th><th class="num">Held-out</th><th class="region-col">Regions</th></tr>
               </thead>
               <tbody>
-                <tr class="t1"><td>1</td><td class="region-col">Brain metastases</td><td class="num">1,196</td><td class="num">179</td><td class="region-col">NETC, SNFH, ET, RC</td></tr>
-                <tr class="t2"><td>2</td><td class="region-col">Pediatric tumors</td><td class="num">294</td><td class="num">91</td><td class="region-col">ET, NET, CC, ED</td></tr>
-                <tr class="t3"><td>3</td><td class="region-col">BraTS-GoAT</td><td class="num">1,351</td><td class="num">450</td><td class="region-col">ET, TC, WT</td></tr>
+                <tr><td>1</td><td class="region-col">Brain metastases</td><td class="num">1,196</td><td class="num">179</td><td class="region-col">NETC, SNFH, ET, RC</td></tr>
+                <tr><td>2</td><td class="region-col">Pediatric tumors</td><td class="num">294</td><td class="num">91</td><td class="region-col">ET, NET, CC, ED</td></tr>
+                <tr><td>3</td><td class="region-col">BraTS-GoAT</td><td class="num">1,351</td><td class="num">450</td><td class="region-col">ET, TC, WT</td></tr>
               </tbody>
             </table>
           </div>
