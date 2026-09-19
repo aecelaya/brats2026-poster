@@ -364,12 +364,44 @@
     font-weight: 600;
   }
 
-  .acknowledgments {
-    font-size: 11pt;
-    color: var(--muted);
+  .ack-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35in;
     margin-top: 0.16in;
     padding-top: 0.12in;
     border-top: 1pt solid var(--line);
+  }
+
+  .acknowledgments {
+    font-size: 11pt;
+    color: var(--muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .qr-block {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.05in;
+  }
+  .qr-block img {
+    width: 0.9in;
+    height: 0.9in;
+    display: block;
+    border: 1pt solid var(--line);
+  }
+  .qr-block span {
+    font-family: var(--mono);
+    font-size: 8pt;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    white-space: nowrap;
   }
 </style>
 </head>
@@ -525,7 +557,13 @@
       <li>Wu, L., et al. VoCo: A Simple-yet-Effective Volume Contrastive Learning Framework for 3D Medical Image Analysis. <em>CVPR</em>, 2024.</li>
       <li>Loshchilov, I., Hutter, F. Decoupled Weight Decay Regularization. <em>arXiv:1711.05101</em>, 2017.</li>
     </ol>
-    <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097). MISFIT and MIST are open-source: github.com/mist-medical/MISFIT &middot; github.com/mist-medical/MIST</p>
+    <div class="ack-row">
+      <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097). MISFIT and MIST are open-source: github.com/mist-medical/MISFIT &middot; github.com/mist-medical/MIST</p>
+      <div class="qr-block">
+        <img src="images/mist_github_qr.png" alt="QR code linking to github.com/mist-medical">
+        <span>Scan for MIST &amp; MISFIT</span>
+      </div>
+    </div>
   </section>
 
 </div>
