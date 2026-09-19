@@ -447,7 +447,7 @@
       <div class="block">
         <h2>Discussion &amp; Conclusion</h2>
         <div class="block-body">
-          <div class="callout callout-result"><strong>Main finding</strong> &mdash; MAE pretraining genuinely helps once architecture, patch size, and budget are held fixed, but held-out validation does not support the pooled MISFIT pipeline beating our established baseline.</div>
+          <div class="callout callout-result"><strong>Main finding</strong> &mdash; MAE pretraining helps once architecture, patch size, and budget are held fixed, but held-out validation does not support the pooled MISFIT pipeline beating our established baseline.</div>
           <ul>
             <li><strong>Task 1's reversal is explainable.</strong> Its lesion-wise scoring amplifies a small boundary deficit that per-voxel CV Dice hides; 1,000 epochs likely wasn't enough to refine it.</li>
             <li><strong>Pretraining helps most where labels are scarce.</strong> Task 2 (294 cases) sees the largest gain (ET Dice 0.518 &rarr; 0.670) and is the only task where the from-scratch model fails to converge.</li>
