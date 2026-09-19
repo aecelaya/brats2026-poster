@@ -364,45 +364,59 @@
     font-weight: 600;
   }
 
-  .ack-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.35in;
-    margin-top: 0.16in;
-    padding-top: 0.12in;
-    border-top: 1pt solid var(--line);
-  }
-
   .acknowledgments {
     font-size: 11pt;
     color: var(--muted);
     margin: 0;
-    flex: 1;
   }
 
-  .qr-block {
-    flex: none;
+  /* ---------- QR banner ---------- */
+  .qr-banner {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.05in;
+    gap: 0.5in;
+    margin: 0.35in 0.7in 0;
+    padding: 0.32in 0.5in;
+    background: var(--navy);
+    border-radius: 0.1in;
   }
-  .qr-block img {
-    width: 0.9in;
-    height: 0.9in;
+
+  .qr-banner-code {
+    flex: none;
+    width: 2in;
+    height: 2in;
     display: block;
-    border: 1pt solid var(--line);
+    background: #fff;
+    padding: 0.14in;
+    border-radius: 0.06in;
   }
-  .qr-block span {
+
+  .qr-banner-text { flex: 1; }
+
+  .qr-banner-kicker {
+    display: block;
     font-family: var(--mono);
-    font-size: 8pt;
-    letter-spacing: 0.03em;
+    font-size: 14pt;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-    white-space: nowrap;
+    color: var(--gold-tint);
+    margin-bottom: 0.06in;
   }
+
+  .qr-banner-text h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 34pt;
+    color: #fff;
+    margin: 0 0 0.08in;
+  }
+
+  .qr-banner-text p {
+    font-size: 17pt;
+    color: #E7E9F2;
+    margin: 0;
+  }
+  .qr-banner-text p strong { color: #fff; font-family: var(--mono); font-size: 0.9em; }
 </style>
 </head>
 <body>
@@ -537,6 +551,15 @@
     </div>
   </div>
 
+  <section class="qr-banner">
+    <img class="qr-banner-code" src="images/mist_github_qr.png" alt="QR code linking to github.com/mist-medical">
+    <div class="qr-banner-text">
+      <span class="qr-banner-kicker">Open Source</span>
+      <h2>Explore MIST &amp; MISFIT</h2>
+      <p>Scan for code, documentation, and releases at <strong>github.com/mist-medical</strong></p>
+    </div>
+  </section>
+
   <section class="references">
     <h2>References</h2>
     <ol class="refs-list">
@@ -557,13 +580,7 @@
       <li>Wu, L., et al. VoCo: A Simple-yet-Effective Volume Contrastive Learning Framework for 3D Medical Image Analysis. <em>CVPR</em>, 2024.</li>
       <li>Loshchilov, I., Hutter, F. Decoupled Weight Decay Regularization. <em>arXiv:1711.05101</em>, 2017.</li>
     </ol>
-    <div class="ack-row">
-      <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097). MISFIT and MIST are open-source: github.com/mist-medical/MISFIT &middot; github.com/mist-medical/MIST</p>
-      <div class="qr-block">
-        <img src="images/mist_github_qr.png" alt="QR code linking to github.com/mist-medical">
-        <span>Scan for MIST &amp; MISFIT</span>
-      </div>
-    </div>
+    <p class="acknowledgments"><strong>Acknowledgments.</strong> Supported in part by CPRIT RP250154, NIH R01CA301555, R01CA195524, and the MD Anderson QIAC Partnership in Research. Data obtained as part of the BraTS 2026 Challenge project (Synapse ID syn74274097).</p>
   </section>
 
 </div>
