@@ -139,12 +139,23 @@
 
   .col { display: flex; flex-direction: column; gap: 0.46in; justify-content: space-between; }
 
+  /* Results block fills the column and spreads its groups (table+text, Fig 1, Fig 2) evenly */
+  .block.block-fill { display: flex; flex-direction: column; flex: 1; }
+  .block.block-fill > .block-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .block.block-fill .results-group > *:last-child { margin-bottom: 0; }
+  .block.block-fill .figure { margin-bottom: 0; }
+
   .block h2 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 38pt;
+    font-size: 40pt;
     color: var(--navy);
-    margin: 0 0 0.16in;
+    margin: 0 0 0.18in;
     padding-top: 0.14in;
     border-top: 3pt solid var(--navy);
   }
@@ -172,35 +183,35 @@
   .block h3 {
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 21pt;
+    font-size: 23.5pt;
     color: var(--ink);
-    margin: 0.26in 0 0.1in;
+    margin: 0.28in 0 0.12in;
   }
 
   .block > .block-body p,
   .block > .block-body li {
-    font-size: 19.5pt;
-    line-height: 1.42;
+    font-size: 22.5pt;
+    line-height: 1.44;
     color: #2B3040;
   }
 
-  .block > .block-body p { margin: 0 0 0.16in; }
+  .block > .block-body p { margin: 0 0 0.18in; }
 
   .block > .block-body ul {
-    margin: 0 0 0.16in;
-    padding-left: 0.28in;
+    margin: 0 0 0.18in;
+    padding-left: 0.3in;
   }
-  .block > .block-body li { margin-bottom: 0.1in; }
+  .block > .block-body li { margin-bottom: 0.12in; }
   .block > .block-body li::marker { color: var(--gold); }
 
   .block .lede {
     font-family: var(--serif);
     font-style: italic;
     font-weight: 500;
-    font-size: 21pt;
-    line-height: 1.38;
+    font-size: 24pt;
+    line-height: 1.4;
     color: var(--navy-soft);
-    margin: 0 0 0.18in;
+    margin: 0 0 0.2in;
     max-width: 60ch;
   }
 
@@ -208,9 +219,9 @@
   .q-list li {
     display: flex;
     gap: 0.16in;
-    font-size: 18pt;
-    line-height: 1.36;
-    margin-bottom: 0.1in;
+    font-size: 20.5pt;
+    line-height: 1.38;
+    margin-bottom: 0.12in;
   }
   .q-list .q-num {
     flex: none;
@@ -225,7 +236,7 @@
   table.data-table, table.rank-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 16.5pt;
+    font-size: 18.5pt;
   }
 
   table.data-table caption, table.rank-table caption {
@@ -233,9 +244,9 @@
     text-align: left;
     font-family: var(--sans);
     font-weight: 600;
-    font-size: 15.5pt;
+    font-size: 17.5pt;
     color: var(--navy);
-    padding-bottom: 0.1in;
+    padding-bottom: 0.12in;
   }
 
   table.data-table th, table.data-table td,
@@ -254,7 +265,7 @@
   table.data-table thead th,
   table.rank-table thead tr:last-child th {
     font-family: var(--mono);
-    font-size: 13.5pt;
+    font-size: 15pt;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--muted);
@@ -267,7 +278,7 @@
     background: var(--navy);
     color: #fff;
     font-weight: 600;
-    font-size: 15pt;
+    font-size: 17pt;
     border-bottom: none;
   }
 
@@ -294,19 +305,19 @@
     background: #fff;
   }
   .figure figcaption {
-    font-size: 16pt;
-    line-height: 1.4;
+    font-size: 17.5pt;
+    line-height: 1.42;
     color: var(--muted);
-    margin-top: 0.1in;
+    margin-top: 0.12in;
   }
   .figure figcaption strong { color: var(--ink); font-family: var(--sans); }
 
   .callout {
     background: var(--gold-tint);
     border-left: 4pt solid var(--gold);
-    padding: 0.18in 0.24in;
-    font-size: 18pt;
-    line-height: 1.4;
+    padding: 0.2in 0.26in;
+    font-size: 20.5pt;
+    line-height: 1.42;
     color: var(--ink);
     margin: 0 0 0.22in;
   }
@@ -314,8 +325,8 @@
 
   /* ---------- Acknowledgments block ---------- */
   .acknowledgments {
-    font-size: 17pt;
-    line-height: 1.45;
+    font-size: 19.5pt;
+    line-height: 1.48;
     color: #2B3040;
     margin: 0;
   }
@@ -467,9 +478,11 @@
     </div>
     <div class="col col-right">
 
-      <div class="block">
+      <div class="block block-fill">
         <h2>Results</h2>
         <div class="block-body">
+
+          <div class="results-group">
 
           <div class="rank-table-wrap">
             <table class="rank-table">
@@ -493,6 +506,8 @@
           <p>Against the <strong>matched control</strong>, MISFIT pretraining wins on all three tasks under both protocols &mdash; the isolated effect is real. Against the <strong>established baseline</strong>, the picture reverses: CV favors the pretrained pipeline on Tasks 2&ndash;3, but that vanishes on held-out validation, where the baseline pulls significantly ahead on Task 1 (p = 1.5&times;10&#8315;&#8308;).</p>
 
           <div class="callout"><strong>Why CV doesn't replicate</strong> &mdash; the MAE encoder saw pooled training-split images label-free, inflating CV scores for Tasks 2&ndash;3. Held-out scoring excludes the pretraining pool entirely, which is why we treat it as decisive.</div>
+
+          </div>
 
           <figure class="figure">
             <img src="images/val_loss_convergence_v3.png" alt="Validation loss convergence curves for all three tasks and arms">
