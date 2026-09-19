@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MISFIT BraTS 2026 Poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #14192B;
+    --navy:       #1F2954;
+    --navy-soft:  #4C5578;
+    --paper:      #FAF8F3;
+    --panel:      #FFFFFF;
+    --gold:       #A07A16;
+    --gold-tint:  #EFE1C0;
+    --line:       #DBD6C8;
+    --muted:      #6B7186;
+
+    --task-1: #3D6EB0;   /* brain metastases   */
+    --task-2: #3E8E68;   /* pediatric tumors   */
+    --task-3: #B0562F;   /* BraTS-GoAT         */
+
+    --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans:  "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono:  "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #6b6b6b;
+    font-family: var(--sans);
+    color: var(--ink);
+  }
+
+  @page { size: 33.1in 46.8in; margin: 0; }
+
+  .poster {
+    width: 33.1in;
+    height: 46.8in;
+    margin: 0.4in auto;
+    background: var(--paper);
+    position: relative;
+    box-shadow: 0 0 0.2in rgba(0,0,0,0.25);
+  }
+
+  @media print {
+    html, body { background: var(--paper); }
+    .poster { margin: 0; box-shadow: none; }
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4in 0.7in;
+    border-bottom: 1pt solid var(--line);
+  }
+
+  .masthead img { display: block; }
+  .masthead .logo-rice { height: 0.62in; width: auto; }
+  .masthead .logo-mda  { height: 0.52in; width: auto; }
+
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 15pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy-soft);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 0.55in 0.7in 0.4in; }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 15pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 0.22in;
+  }
+
+  h1.title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 84pt;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 0.18in;
+    text-wrap: balance;
+    max-width: 30in;
+  }
+
+  h1.title .sub {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.55em;
+    color: var(--navy-soft);
+    margin-top: 0.12em;
+  }
+
+  .byline {
+    font-size: 27pt;
+    color: var(--ink);
+    margin: 0 0 0.1in;
+  }
+  .byline sup { font-family: var(--mono); font-size: 0.55em; color: var(--gold); margin-left: 1pt; }
+
+  .affil {
+    font-size: 18pt;
+    color: var(--muted);
+    margin: 0 0 0.45in;
+  }
+  .affil sup { font-family: var(--mono); font-size: 0.7em; color: var(--gold); margin-right: 2pt; }
+  .affil .sep { display: inline-block; width: 0.5in; }
+
+  /* ---------- Task strip ---------- */
+  .task-strip {
+    list-style: none;
+    display: flex;
+    gap: 0.35in;
+    margin: 0;
+    padding: 0;
+  }
+
+  .task {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.16in;
+    padding: 0.18in 0.22in;
+    background: var(--panel);
+    border: 1pt solid var(--line);
+    border-left: 5pt solid var(--dot);
+  }
+  .task-1 { --dot: var(--task-1); }
+  .task-2 { --dot: var(--task-2); }
+  .task-3 { --dot: var(--task-3); }
+
+  .task-name {
+    display: block;
+    font-size: 18pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .task-n {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13pt;
+    color: var(--muted);
+    margin-top: 2pt;
+  }
+
+  /* ---------- Rule ---------- */
+  .rule {
+    border: none;
+    height: 2pt;
+    margin: 0.45in 0.7in 0.4in;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 60%, var(--gold-tint) 100%);
+  }
+
+  /* ---------- Content grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    column-gap: 0.6in;
+    padding: 0 0.7in;
+  }
+
+  .col { display: flex; flex-direction: column; gap: 0.5in; }
+
+  .block h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 33pt;
+    color: var(--navy);
+    margin: 0 0 0.16in;
+    padding-top: 0.14in;
+    border-top: 2.5pt solid var(--navy);
+  }
+
+  .block p.todo {
+    font-size: 18pt;
+    line-height: 1.5;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  .block p.todo::before {
+    content: "TODO — ";
+    font-style: normal;
+    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 0.72em;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+
+  /* ---------- References band ---------- */
+  .references {
+    margin: 0.6in 0.7in 0;
+    padding-top: 0.3in;
+    border-top: 1pt solid var(--line);
+  }
+
+  .references h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 26pt;
+    color: var(--navy);
+    margin: 0 0 0.14in;
+  }
+
+  .references .todo {
+    font-size: 15pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .references .todo::before {
+    content: "TODO — ";
+    font-style: normal;
+    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 0.75em;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <header class="masthead">
+    <img class="logo-rice" src="images/University_Lockups_Digital_Rice_Blue.png" alt="Rice University">
+    <div class="masthead-label">MICCAI &middot; BraTS 2026 Challenge Report</div>
+    <img class="logo-mda" src="images/mda_logo.png" alt="MD Anderson Cancer Center">
+  </header>
+
+  <section class="hero">
+    <div class="kicker">Self-Supervised Pretraining &middot; 3D Segmentation</div>
+    <h1 class="title">MISFIT: A Self-Supervised Pretraining Toolkit for 3D Medical Imaging
+      <span class="sub">A Preliminary Test Across Three BraTS 2026 Segmentation Tasks</span>
+    </h1>
+
+    <p class="byline">Adrian Celaya<sup>1,2</sup>, Yogesh Kumar<sup>1</sup>, Awj Twam<sup>1</sup>, Beatrice Riviere<sup>2</sup>, David Fuentes<sup>1</sup>, Tucker Netherton<sup>1</sup></p>
+    <p class="affil"><sup>1</sup>The University of Texas MD Anderson Cancer Center, Houston TX<span class="sep"></span><sup>2</sup>Rice University, Houston TX</p>
+
+    <ul class="task-strip">
+      <li class="task task-1">
+        <div>
+          <span class="task-name">Brain Metastases</span>
+          <span class="task-n">Task 1 &middot; n = 1,196</span>
+        </div>
+      </li>
+      <li class="task task-2">
+        <div>
+          <span class="task-name">Pediatric Tumors</span>
+          <span class="task-n">Task 2 &middot; n = 294</span>
+        </div>
+      </li>
+      <li class="task task-3">
+        <div>
+          <span class="task-name">BraTS&#8209;GoAT</span>
+          <span class="task-n">Task 3 &middot; n = 1,351</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <div class="grid">
+    <div class="col col-left">
+
+      <div class="block">
+        <h2>Introduction</h2>
+        <p class="todo">Motivation for MIST/MISFIT, the three BraTS 2026 tasks (metastases, pediatric tumors, BraTS-GoAT), and the two questions this study asks (system-level deployment vs. isolated pretraining effect).</p>
+      </div>
+
+      <div class="block">
+        <h2>Methods</h2>
+        <p class="todo">Data (Table 1: task, cohort, training/held-out counts, regions), preprocessing, MISFIT self-supervised MAE pretraining, the three network arms (pocket nnUNet baseline, MISFIT-pretrained SwinUNETR-V2, from-scratch SwinUNETR-V2), and the evaluation protocol (cross-validation vs. held-out, BraTS-style rank, Wilcoxon test).</p>
+      </div>
+
+    </div>
+    <div class="col col-right">
+
+      <div class="block">
+        <h2>Results</h2>
+        <p class="todo">Table 2 (average rank + p-values), Table 3 (per-region metrics), Figure 1 (validation loss curves), Figure 2 (qualitative comparison).</p>
+      </div>
+
+      <div class="block">
+        <h2>Discussion &amp; Conclusion</h2>
+        <p class="todo">Held-out validation does not favor the pooled MISFIT pipeline over the pocket nnUNet baseline; matched-control comparison shows MAE pretraining helps when architecture/patch size/budget are fixed; final challenge submission uses the compliant baseline.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="references">
+    <h2>References</h2>
+    <p class="todo">Reference list.</p>
+  </section>
+
+</div>
+
+</body>
+</html>
