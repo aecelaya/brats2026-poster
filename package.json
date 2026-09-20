@@ -1,0 +1,10 @@
+{
+  "name": "brats2026-poster",
+  "private": true,
+  "scripts": {
+    "render": "node render.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}
